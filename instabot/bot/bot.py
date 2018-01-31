@@ -5,7 +5,7 @@ import signal
 from ..api import API
 
 from .bot_get import get_media_owner, get_your_medias, get_user_medias
-from .bot_get import get_timeline_medias, get_hashtag_medias, get_user_info, get_total_hashtag_medias
+from .bot_get import get_timeline_medias, get_hashtag_medias, get_user_info, get_total_hashtag_medias, get_user_info_from_userid
 from .bot_get import get_geotag_medias, get_timeline_users, get_hashtag_users, get_media_id_from_link
 from .bot_get import get_media_commenters, get_userid_from_username, get_username_from_userid
 from .bot_get import get_user_followers, get_user_following, get_media_likers, get_popular_medias
@@ -285,6 +285,9 @@ class Bot(API):
 
     def get_user_info(self, user_id):
         return get_user_info(self, user_id)
+    
+     def get_user_info_from_userid(self, user_id):
+        return get_user_info_from_userid(self, user_id)  
 
     def get_user_followers(self, user_id, nfollows=None):
         return get_user_followers(self, user_id, nfollows)
