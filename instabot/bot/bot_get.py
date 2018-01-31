@@ -150,6 +150,11 @@ def get_user_info(self, user_id):
         return False
     return self.LastJson['user']
 
+def get_user_info_from_userid(self, user_id):
+    self.getUsernameInfo(user_id)
+    if 'user' not in self.LastJson:
+        return False
+    return self.LastJson['user']
 
 def get_user_followers(self, user_id, nfollows):
     user_id = self.convert_to_user_id(user_id)
